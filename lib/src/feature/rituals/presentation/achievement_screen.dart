@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:neuro_robot/src/core/utils/app_icon.dart';
 import 'package:neuro_robot/src/core/utils/icon_provider.dart';
 import 'package:neuro_robot/src/core/utils/size_utils.dart';
+import 'package:neuro_robot/src/core/utils/text_with_border.dart';
 import 'package:neuro_robot/src/feature/rituals/bloc/user_bloc.dart';
 import 'package:neuro_robot/ui_kit/animated_button.dart';
 
@@ -68,9 +69,9 @@ class _AchievementScreenState extends State<AchievementScreen>
               FadeSlideIn(
                 controller: _controller,
                 interval: const Interval(0.0, 0.4, curve: Curves.easeOut),
-                child: const Text(
+                child: const TextWithBorder(
                   'NEUROCOLLECTION',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+                  fontSize: 40,
                 ),
               ),
               const Gap(29),
@@ -101,8 +102,8 @@ class _AchievementScreenState extends State<AchievementScreen>
                               asset: unlocked
                                   ? "assets/images/${(achievement.id % 5) + 1}.webp"
                                   : IconProvider.close.buildImageUrl(),
-                              width: 106,
-                              height: 106,
+                              width: isIpad(context) ? 200:106,
+                              height: isIpad(context) ? 200:106,
                             ),
                           ),
                         ],
@@ -123,7 +124,7 @@ class _AchievementScreenState extends State<AchievementScreen>
       barrierColor: const Color.fromARGB(193, 30, 0, 76),
       context: context,
       builder: (_) => SizedBox(
-        height: 224,
+        height: isIpad(context) ? 480 : 224,
         child: Stack(
           children: [
             Container(
@@ -137,17 +138,13 @@ class _AchievementScreenState extends State<AchievementScreen>
               width: double.infinity,
             ),
             SizedBox(
-              height: 224,
-              width: 343,
+              height: isIpad(context) ? 460: 224,
+
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 33.0, horizontal: 23),
-                child: Column(
-                  children: [
-                    Text(text,
-                        style: const TextStyle(fontSize: 26, fontFamily: 'F')),
-                  ],
-                ),
+                child: Text(text,
+                    style:  TextStyle(fontSize: isIpad(context) ? 40:26, fontFamily: 'F')),
               ),
             ),
           ],

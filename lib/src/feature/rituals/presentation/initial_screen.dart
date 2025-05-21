@@ -54,7 +54,7 @@ class InitialScreen extends StatelessWidget {
               ),
               Spacer(),
               SizedBox(
-                height: getHeight(context, percent: 0.7),
+                height: getHeight(context, percent: 0.65),
                 width: isIpad(context) ? 606 : 343,
                 child: Stack(
                   clipBehavior: Clip.none,
@@ -78,7 +78,7 @@ class InitialScreen extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: -50,
+                      top: isIpad(context) ? -100:-50,
                       left: 0,
                       right: 0,
                       child: Stack(
@@ -86,7 +86,7 @@ class InitialScreen extends StatelessWidget {
                         children: [
                           AppIcon(asset: IconProvider.baner.buildImageUrl()),
                           Positioned(
-                            bottom: 50,
+                            bottom: isIpad(context) ?100:50,
                             child: Text("NEURON ${id+1}"))
                         ],
                       ),

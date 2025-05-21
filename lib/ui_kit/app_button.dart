@@ -27,11 +27,11 @@ class AppButton extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           AppIcon(
-            width: isIpad(context) ? 800 : null,
+            width: isIpad(context) ? null : null,
             asset: isMenu
                 ? IconProvider.menuButton.buildImageUrl()
                 : IconProvider.button.buildImageUrl(),
-            fit: isIpad(context) ? BoxFit.fitWidth : BoxFit.contain,
+            fit: isIpad(context) ? BoxFit.contain : BoxFit.contain,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 36),

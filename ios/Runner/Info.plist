@@ -14,6 +14,9 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>neuro_robot</string>
+	<key>NSUserTrackingUsageDescription</key>
+        <string>Advertising ID helps show ads that are most relevant to you</string>
+
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

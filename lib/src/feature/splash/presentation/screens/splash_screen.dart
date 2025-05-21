@@ -26,6 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> startLoading(BuildContext context) async {
     await Future.delayed(const Duration(milliseconds: 1000));
+    await AdvertisingId.id(true);
     context.go(RouteValue.home.path);
   }
 

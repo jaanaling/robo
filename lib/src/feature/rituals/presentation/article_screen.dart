@@ -66,7 +66,7 @@ class ArticleScreen extends StatelessWidget {
                       child: Text(
                         article.content,
                         textAlign: TextAlign.justify,
-                        style: TextStyle(fontSize: 26, fontFamily: "F"),
+                        style: TextStyle(fontSize: isIpad(context) ? 48 :26, fontFamily: "F"),
                       ),
                     ),
                   ),
