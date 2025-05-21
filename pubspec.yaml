@@ -1,0 +1,46 @@
+name: neuro_robot
+description: "neuro_robot"
+publish_to: 'none'
+version: 0.0.1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^14.1.4
+  logger: ^2.0.2+1
+  flutter_bloc: ^8.1.5
+  gap: ^3.0.1
+  get_it: ^7.7.0
+  equatable: ^2.0.5
+  shared_preferences: ^2.3.1
+  cupertino_icons: ^1.0.8
+  flutter_localizations:
+    sdk: flutter
+  uuid: ^4.5.1
+  flutter_svg: ^2.0.17
+  haptic_feedback: ^0.5.1+1
+  just_audio: ^0.9.44
+  advertising_id: ^2.7.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lint: ^2.3.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/fonts/
+    - assets/json/
+    - assets/music/
+  fonts:
+    - family: F
+      fonts:
+        - asset: assets/fonts/SoDoSans-Bold.ttf
+          weight: 400

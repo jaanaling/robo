@@ -1,0 +1,252 @@
+[
+    {
+        "id": "1",
+        "title": "Foundations of Cryptography",
+        "content": "Cryptography is the science of securing information against unauthorized access. Historically it protected military secrets and diplomatic dispatches. Modern systems additionally guarantee authenticity integrity and non-repudiation. Mathematics underpins every serious algorithm. Keys rather than algorithms preserve secrecy. Strong designs stay safe even when algorithms are public knowledge. Attackers are assumed to know everything except the secret key. Security goals are framed within precise threat models. Probability and computational complexity guide formal proofs. This chapter establishes the base for all later study."
+    },
+    {
+        "id": "2",
+        "title": "Caesar and Shift Ciphers",
+        "content": "The Caesar cipher replaces each letter with one shifted a fixed distance. Julius Caesar reputedly used a shift of three to protect messages. Despite its antiquity the idea illustrates substitution fundamentals. Encryption is quick requiring only modular arithmetic on alphabet indices. Decryption simply reverses the shift. Because there are only twenty-five shifts exhaustive search easily breaks it. Frequency analysis further simplifies the attack. Nevertheless the cipher introduces core concepts like key space and brute force. It remains popular for classroom demonstrations. Understanding its weakness motivates stronger designs."
+    },
+    {
+        "id": "3",
+        "title": "Monoalphabetic Substitution",
+        "content": "Monoalphabetic substitution maps every plaintext letter to a unique ciphertext letter. The key is a complete permutation of the alphabet. Encryption and decryption use identical lookup tables in inverse directions. Although key space is twenty-six factorial frequency statistics betray structure. Common letters like E or T still appear most often after substitution. Frequency analysis exploits this imbalance to reconstruct the key. Digraph and trigraph statistics accelerate the process. Historical spies relied on such attacks for intelligence. Modern cryptosystems avoid deterministic single mappings. Studying this cipher teaches statistical cryptanalysis fundamentals."
+    },
+    {
+        "id": "4",
+        "title": "The Vigenère Cipher",
+        "content": "The Vigenère cipher extends Caesar by using a repeating keyword. Each keyword letter determines the shift for its corresponding plaintext letter. The result is a polyalphabetic substitution resisting simple frequency attacks. Kasiski examination measures repeated ciphertext segments to find keyword length. Once length is known each column becomes an independent Caesar cipher. Solving each Caesar recovers the full key. Longer unpredictable keys increase security but usability suffers. A one-time pad is essentially Vigenère with a non-repeating random key. That pad is theoretically unbreakable but difficult to distribute securely. Vigenère thus bridges classical and perfect secrecy."
+    },
+    {
+        "id": "5",
+        "title": "Playfair and Digraph Ciphers",
+        "content": "Playfair encrypts pairs of letters using a five-by-five keyed square. Digraph substitution obscures single letter frequencies more effectively than monoalphabetic ciphers. Preparation merges I and J and inserts filler X between repeated letters. Encryption locates each digraph in the square and applies positional rules. Decryption inverts those same geometric transformations. Although stronger than Vigenère it still succumbs to digraph frequency analysis. Playfair enjoyed military use during the Boer War and World War I. Manual operation made it attractive for field units without machines. Today it serves mainly educational purposes. Its rules illustrate how structure influences security."
+    },
+    {
+        "id": "6",
+        "title": "Classical Transposition Techniques",
+        "content": "Transposition ciphers rearrange plaintext order without altering characters themselves. Columnar transposition writes text into rows under a keyword then reads columns by alphabetical order. Route ciphers place letters along geometric paths on a grid. Rail Fence writes diagonally across rails and reads row by row. Because characters remain unchanged frequency distribution is preserved. Attacks often combine frequency information with positional guessing. Multiple transposition rounds increase complexity but lengthen ciphertext. Machine age systems sometimes mixed transposition with substitution for balance. Understanding pure transposition highlights importance of diffusion. Modern block ciphers implement diffusion at a much deeper level."
+    },
+    {
+        "id": "7",
+        "title": "Rail Fence and Route Ciphers",
+        "content": "The Rail Fence cipher arranges text in zigzag across several rails. After finishing the traversal ciphertext is read row by row. Key equals the number of rails controlling depth of zigzag. Visualization helps both encryption and decryption. Route ciphers instead fill a grid then trace paths like spirals or boustrophedons. Key includes grid dimensions and traversal order. Both methods change letter positions while preserving counts. Simple brute force over small grids defeats them quickly. Historical couriers appreciated their pencil and paper simplicity. These ciphers demonstrate permutation concepts used later in block cipher design."
+    },
+    {
+        "id": "8",
+        "title": "Frequency Analysis Basics",
+        "content": "Frequency analysis measures letter distribution to attack substitution ciphers. English text shows characteristic frequencies with E T A O I N most common. By comparing ciphertext frequencies to expected profiles analysts guess mappings. Digraph and trigram statistics refine accuracy. Index of coincidence quantifies how uneven a distribution appears. High coincidence suggests monoalphabetic substitution while low suggests polyalphabetic. Automated tools accelerate these calculations on large texts. Languages other than English require different reference tables. Practicing frequency analysis develops intuition for hidden structure. Mastery of this technique unlocked many historic ciphertexts."
+    },
+    {
+        "id": "9",
+        "title": "Breaking Polyalphabetic Ciphers",
+        "content": "Polyalphabetic ciphers cycle through several substitution alphabets. Keyword periodicity masks simple frequency patterns. Attacking them begins with estimating period length. Kasiski counts repeated ciphertext sequences to reveal common divisors. Friedman’s test uses index of coincidence for statistical estimation. Once period is known treat text as several Caesar ciphers. Solving each Caesar recovers the repeating key. Very long periods approach one-time pad behavior. Randomizing key selection drastically improves resistance. These attacks illustrate limits of classical protection."
+    },
+    {
+        "id": "10",
+        "title": "The Enigma Machine",
+        "content": "Enigma combined mechanical rotors with electrical pathways to create polyalphabetic substitution. Each keystroke advanced rotors producing a new wiring permutation. A plugboard swapped letters before and after rotor processing. Because the machine performed reciprocal encryption and decryption, operators could use the same settings both ways. German military relied heavily on Enigma during World War II. Allied cryptanalysts at Bletchley Park exploited procedural weaknesses. Bombe machines automated search through daily key space. Captured key sheets accelerated decryption efforts. Breaking Enigma shortened the war and inspired modern computation."
+    },
+    {
+        "id": "11",
+        "title": "One-Time Pad Principles",
+        "content": "A one-time pad uses a truly random key equal in length to plaintext. Encryption performs bitwise exclusive OR between key and message. Decryption repeats XOR producing the original plaintext. Claude Shannon proved the scheme offers perfect secrecy. Any ciphertext could decrypt to any plaintext with appropriate key. Security collapses if keys are reused or predictable. Key distribution becomes the primary practical challenge. High bandwidth channels require enormous key stores. Quantum key distribution may one day solve delivery. Until then one-time pads see limited high-security usage."
+    },
+    {
+        "id": "12",
+        "title": "Introduction to Symmetric Cryptography",
+        "content": "Symmetric cryptography uses the same secret key for encryption and decryption. Algorithms fall into block or stream categories. Block ciphers transform fixed-size data chunks. Stream ciphers generate keystreams combined with plaintext bits. Key management is simpler than public key systems because operations are fast. However sharing keys securely at scale remains difficult. Symmetric algorithms underpin bulk data encryption due to efficiency. Protocols typically establish keys using asymmetric methods, then switch to symmetric ciphers. Understanding their design lays groundwork for applied security engineering. Performance and resistance to cryptanalysis drive algorithm selection."
+    },
+    {
+        "id": "13",
+        "title": "DES and Triple DES Overview",
+        "content": "The Data Encryption Standard became a U.S. federal encryption specification in 1977. DES uses a 56-bit key and operates on 64-bit blocks. Sixteen Feistel rounds apply substitution and permutation boxes. Advances in computing rendered exhaustive key search feasible by the late 1990s. Triple DES mitigates weakness by applying DES three times with two or three independent keys. Effective key size rises to 112 or 168 bits respectively. Triple DES remains FIPS approved for legacy compatibility. Its performance is slower than modern ciphers like AES. Gradual deprecation encourages migration to stronger alternatives. Studying DES reveals historical evolution of block cipher design."
+    },
+    {
+        "id": "14",
+        "title": "The Advanced Encryption Standard",
+        "content": "AES emerged from the Rijndael algorithm chosen through an open competition. It supports 128-bit blocks and keys of 128, 192, or 256 bits. Operations include substitution, row shifting, column mixing, and key addition. Architecture favors efficient software and hardware implementation. No practical attacks against full AES currently exist. Side-channel vulnerabilities require careful implementation countermeasures. AES is ubiquitous in protocols like TLS IPSec and disk encryption. Hardware acceleration in CPUs improves throughput significantly. Future quantum computers threaten key sizes less than 256 bits. AES exemplifies modern symmetric cipher strength."
+    },
+    {
+        "id": "15",
+        "title": "Stream Ciphers and RC4",
+        "content": "Stream ciphers output pseudorandom keystreams XORed with plaintext bits. RC4, once widely used, updates a permutation array to generate bytes. Weak key scheduling and initial bias led to practical attacks. Modern designs like ChaCha20 improve statistical properties and resistance. Stream ciphers excel in low latency environments such as real-time audio. Key and nonce reuse catastrophically compromises confidentiality. Some stream ciphers support seekable keystreams for random access encryption. Authenticated modes combine stream cipher output with message authentication codes. Hardware random bit generators should not be confused with stream ciphers. Careful nonce management is essential for safety."
+    },
+    {
+        "id": "16",
+        "title": "Block Cipher Modes of Operation",
+        "content": "Block ciphers alone encrypt only fixed-size blocks. Modes of operation chain blocks to secure arbitrary length data. Electronic Codebook reveals patterns and is generally discouraged. Cipher Block Chaining introduces feedback making identical plaintext blocks differ. Counter mode turns block ciphers into stream ciphers by encrypting incrementing counters. Galois Counter Mode provides both confidentiality and authentication. Output Feedback and Cipher Feedback produce keystreams from block ciphers. Choosing unique nonces is critical for many modes. Padding schemes protect final partial blocks. Mode selection impacts performance parallelism and error propagation. Engineers must match mode features to application requirements."
+    },
+    {
+        "id": "17",
+        "title": "Hash Functions and Integrity",
+        "content": "Cryptographic hash functions map arbitrary input to fixed-length digests. Desirable properties include preimage resistance second preimage resistance and collision resistance. Small input changes should produce unpredictable digest differences. MD5 and SHA-1 suffer from practical collision attacks. Modern standards recommend SHA-256 SHA-3 or BLAKE3. Hashes verify data integrity and power digital signatures. Password hashing requires additional defenses like salting and work factors. Merkle trees use hashes to authenticate large datasets efficiently. Hash-based message authentication codes rely on secret key inside hashing. Understanding hash design informs broader cryptographic practice."
+    },
+    {
+        "id": "18",
+        "title": "Message Authentication Codes",
+        "content": "A Message Authentication Code assures recipients the data came from someone possessing the secret key. Unlike hashes MACs require shared keys and protect against tampering. HMAC builds a MAC using hash functions by processing inner and outer paddings. CMAC uses block cipher primitives for authentication. Poly1305 pairs with ChaCha20 in modern protocols to provide fast MACs. Truncating MAC outputs can weaken security if done excessively. Verification must execute in constant time to thwart timing attacks. Separate keys for encryption and MAC help avoid cross-protocol pitfalls. Authenticated encryption modes integrate MAC mechanisms directly. Choosing reliable MACs prevents silent data corruption."
+    },
+    {
+        "id": "19",
+        "title": "Public Key Cryptography Concepts",
+        "content": "Public key cryptography uses mathematically linked key pairs. Public keys encrypt or verify signatures while private keys decrypt or sign. Asymmetric algorithms rely on hard mathematical problems like factoring or discrete logarithms. They enable secure key exchange over insecure channels. Key length and parameter choice relate directly to attack complexity. Performance is slower than symmetric algorithms but acceptable for small data. Public keys allow digital signatures promoting non-repudiation. Certificates bind public keys to identities through trust chains. Understanding asymmetry revolutionized secure communications. Future innovations continue to expand its capabilities."
+    },
+    {
+        "id": "20",
+        "title": "The RSA Algorithm Explained",
+        "content": "RSA selects two large primes and multiplies them to create modulus n. The totient of n guides selection of public exponent e and private exponent d. Encryption raises plaintext to power e modulo n. Decryption applies exponent d returning original message. Security depends on difficulty of factoring n into primes. Key sizes of 2048 bits remain mainstream though 3072 bits extend margin. Padding schemes like OAEP thwart deterministic weaknesses. Chinese Remainder optimization accelerates private operations. Fault attacks can extract primes if implementations skip checks. RSA’s longevity illustrates careful mathematical design."
+    },
+    {
+        "id": "21",
+        "title": "Diffie–Hellman Key Exchange",
+        "content": "Diffie and Hellman introduced public key agreement using discrete logarithms. Two parties agree on group parameters and exchange exponentiated values. Each side raises the received value to its secret exponent producing identical shared keys. An eavesdropper sees only public elements lacking sufficient information. Ephemeral keys provide forward secrecy by generating new secrets each session. Finite field groups were traditional but elliptic curves improve efficiency. Parameters must avoid small subgroup attacks. Authenticating the exchange prevents man-in-the-middle interception. Diffie–Hellman underlies many secure protocols including TLS. Its simple idea transformed secure networking."
+    },
+    {
+        "id": "22",
+        "title": "Elliptic Curve Cryptography",
+        "content": "Elliptic Curve Cryptography operates over points on algebraic curves. Smaller key sizes achieve equivalent security compared with RSA. Scalar multiplication of points forms the core hard problem. Standardized curves like P-256 exist alongside newer Curve25519 and Ed448. Careful parameter selection avoids weaknesses from special structure. Constant-time arithmetic counters timing and side-channel attacks. ECC supports encryption key exchange and signatures. Quantum computers threaten ECC similarly to other discrete log systems. Post-quantum migration planning is prudent. Despite future concerns ECC dominates modern mobile security."
+    },
+    {
+        "id": "23",
+        "title": "Digital Signatures",
+        "content": "Digital signatures bind messages to signers using private keys. The signer computes a signature, and anyone with the public key can verify. RSA, DSA, and ECDSA are common signature algorithms. EdDSA offers deterministic operation and high performance. Message hashing precedes signing to reduce data size and standardize input length. Signatures provide integrity authentication and non-repudiation. Certificate authorities attest to key ownership enabling trust. Replay protection often includes timestamps or sequence numbers. Verification must reject padding or malleability manipulations. Signatures enable legal and financial digital transactions."
+    },
+    {
+        "id": "24",
+        "title": "Public Key Infrastructure",
+        "content": "Public Key Infrastructure distributes and manages digital certificates. Certificate Authorities sign certificates binding identities to public keys. Registration Authorities validate applicant identity before issuance. Certificate revocation lists and Online Certificate Status Protocol handle compromised keys. Trust stores embedded in software anchor the hierarchy. Browsers verify website certificates during TLS handshakes. Misissued certificates can undermine security across many users. Certificate Transparency logs improve accountability by public auditing. Automating certificate renewal reduces outage risks. Robust PKI remains essential for internet trust."
+    },
+    {
+        "id": "25",
+        "title": "Key Management Practices",
+        "content": "Securing keys often proves harder than designing algorithms. Generation requires high-quality entropy sources. Storage must prevent unauthorized access and accidental loss. Key rotation limits exposure when compromise occurs. Separation of duty splits roles among hardware security modules and administrators. Lifecycle management tracks creation distribution usage archiving and destruction. Backup strategies balance availability against secrecy. Derivation of sub-keys confines damage to specific contexts. Auditing key events supports incident response. Effective management sustains long-term cryptographic protection."
+    },
+    {
+        "id": "26",
+        "title": "Random Number Generation",
+        "content": "Cryptography demands unpredictable random numbers for keys and nonces. True random generators harvest physical phenomena like thermal noise. Pseudorandom generators expand small seeds into long sequences. Cryptographic PRNGs must resist state compromise attacks. Operating systems provide secure randomness APIs such as /dev/urandom or CSPRNG functions. Seeding from insufficient entropy led to historical vulnerabilities. Hardware random modules enhance throughput on servers. Testing suites assess statistical quality but cannot prove unpredictability. Mixing multiple entropy sources increases resilience. Developers must avoid predictable or weak randomness."
+    },
+    {
+        "id": "27",
+        "title": "Password Hashing and Salting",
+        "content": "Storing plain passwords endangers users after breaches. Hashing converts passwords into irreversible digests. Salts add unique random values to foil rainbow tables. Attackers still brute force popular passwords using GPU acceleration. Specialized algorithms like bcrypt scrypt and Argon2 deliberately slow hashing. Memory hardness impedes parallel attacks on dedicated hardware. Pepper secrets provide additional hidden input managed by server administrators. Constant-time comparisons avoid timing leaks during verification. Periodic policy reviews adapt to increasing hardware capability. Strong password infrastructure mitigates inevitable database leaks."
+    },
+    {
+        "id": "28",
+        "title": "Key Derivation Functions",
+        "content": "Key Derivation Functions transform shared secrets into cryptographic keys. HKDF expands short keys with pseudorandom functions and context information. PBKDF2 uses repeated HMAC iterations to slow brute force attacks. Scrypt and Argon2 add memory intensity resisting ASIC specialization. Nonce and usage labels isolate keys for different operations. Deriving session keys from master keys supports forward secrecy. Incorrect reuse of derived material across algorithms weakens separation. RFC standards document parameter recommendations and test vectors. Libraries usually implement KDFs to reduce programmer error. Proper derivation practices harden protocol designs."
+    },
+    {
+        "id": "29",
+        "title": "Secure Protocols: TLS",
+        "content": "Transport Layer Security secures web traffic end to end. The handshake negotiates cipher suites authenticates servers and establishes session keys. Diffie–Hellman or ECDHE provides forward secrecy in modern versions. Certificates enable browser trust decisions. Record layer encrypts application data using chosen symmetric ciphers. MAC or AEAD modes ensure integrity and authenticity. Renegotiation vulnerabilities required protocol updates. TLS 1.3 simplifies handshake and removes outdated algorithms. Proper configuration prevents downgrade and padding oracle attacks. Mastery of TLS deployment is essential for internet security."
+    },
+    {
+        "id": "30",
+        "title": "Secure Email: PGP and S/MIME",
+        "content": "Email protocols lack inherent confidentiality, so encryption extensions fill the gap. Pretty Good Privacy uses web-of-trust key distribution. S/MIME relies on X.509 certificates issued by authorities. Messages are often signed and encrypted for layered assurance. MIME encoding wraps binary ciphertext for transport. Key management remains challenging for nontechnical users. Automatic discovery is improving but adoption stays limited. Opportunistic encryption gains popularity with STARTTLS. Researchers continue refining usable secure email designs. Understanding both standards aids compliance and privacy efforts."
+    },
+    {
+        "id": "31",
+        "title": "Cryptography in Databases",
+        "content": "Databases store sensitive personal financial and health information. Transparent data encryption secures entire files at rest. Column-level encryption protects specific fields like credit cards. Application-level encryption keeps data indecipherable even from database administrators. Indexing encrypted columns requires deterministic or order-preserving schemes. Key management integrates with hardware modules or central vaults. Query performance can suffer under heavy encryption. Audit logs and access control complement cryptographic protections. Masking and tokenization offer alternatives when computation on plaintext is unnecessary. Balanced design meets both security and operational needs."
+    },
+    {
+        "id": "32",
+        "title": "Tokenization and Format-Preserving Encryption",
+        "content": "Tokenization replaces real data with opaque tokens stored separately in secure vaults. Format-preserving encryption keeps length and character sets intact for legacy systems. Credit card industry standards encourage these techniques. FPE algorithms like FF1 and FF3 use Feistel constructions with tweakable rounds. Security proofs consider reduced domain sizes. Tokenization vaults must control mapping lookups and enforce strong access controls. Deterministic tokens support joins but risk correlation attacks. Combining tokenization with partial redaction assists fraud detection workflows. Implementations must meet compliance regulations such as PCI-DSS. Proper design balances usability compatibility and confidentiality."
+    },
+    {
+        "id": "33",
+        "title": "Homomorphic Encryption",
+        "content": "Homomorphic encryption allows computation on ciphertexts producing encrypted results. Decrypting yields the same outcome as operating on plaintext. Schemes exist for partially additive or multiplicative operations. Fully homomorphic encryption supports arbitrary computation but remains resource intensive. Gentry’s breakthrough lattice construction sparked active research. Cloud providers can process encrypted data without seeing sensitive content. Noise growth and key switching complicate implementation. Performance improvements continue reducing barriers to adoption. Hybrid approaches offload heavy operations to trusted hardware. Homomorphic encryption promises privacy-preserving analytics."
+    },
+    {
+        "id": "34",
+        "title": "Zero Knowledge Proofs",
+        "content": "Zero knowledge proofs convince a verifier that a statement is true without revealing why. Interactive protocols exchange challenge and response rounds. Non-interactive variants derive from Fiat–Shamir heuristics using hash functions. zk-SNARKs enable compact proofs with succinct verification. Blockchain projects use zero knowledge for private transactions. Soundness and completeness properties assure reliability. Trusted setup ceremonies sometimes generate proving keys. Post-quantum designs aim to resist future threats. Libraries abstract complex mathematics for developers. Zero knowledge expands possibilities for privacy-preserving authentication."
+    },
+    {
+        "id": "35",
+        "title": "Post-Quantum Cryptography",
+        "content": "Large-scale quantum computers threaten current public key systems. Shor’s algorithm efficiently factors integers and solves discrete logs. Post-quantum cryptography explores algorithms resistant to quantum attacks. Lattice code hash multivariate and isogeny methods lead candidate categories. NIST coordinates a standardization competition evaluating security and performance. Key sizes often increase significantly but remain practical. Transition planning includes hybrid schemes combining classical and post-quantum keys. Implementation must guard against side-channel leaks just like classical crypto. Early adoption reduces migration risk. Post-quantum readiness ensures future confidentiality."
+    },
+    {
+        "id": "36",
+        "title": "Lattice-Based Schemes",
+        "content": "Lattice problems like Learning With Errors underpin several post-quantum algorithms. Hardness relies on worst-case reductions between lattice approximation tasks. Kyber dilithium and frodoKEM illustrate practical encryption and signature designs. Parameter choices balance security and performance metrics. Polynomial rings enable efficient number-theoretic transforms accelerating computation. Randomness quality critically affects chosen error distributions. Implementations must use constant-time arithmetic to prevent leaking secret coefficients. Research continues on side-channel resistant lattice hardware. Integration into TLS is already underway in experimental drafts. Lattice schemes likely form the cornerstone of future standards."
+    },
+    {
+        "id": "37",
+        "title": "Hash-Based Signatures",
+        "content": "Hash-based signatures derive security solely from hash function properties. Lamport one-time signatures introduced the concept. Merkle trees aggregate many one-time keys into manageable public roots. SPHINCS+ provides stateless signing without per-message key storage. Signature sizes are larger than ECDSA but verification is fast. Winternitz chains reduce key size at cost of computation. Hash agility helps stay secure even if one hash weakens. Quantum attacks only offer quadratic speedup against hashes keeping security margins. Simplicity of underlying assumptions appeals to auditors. Hash-based schemes may see early post-quantum deployment."
+    },
+    {
+        "id": "38",
+        "title": "Side-Channel Attacks",
+        "content": "Side-channel attacks extract secrets from physical leakage rather than algorithmic weaknesses. Power consumption timing electromagnetic emissions and acoustic noise reveal correlations. Differential power analysis aggregates traces to recover key bits statistically. Blinding randomizes intermediate values breaking correlations. Constant-time coding removes data-dependent branches and memory access. Shielding and voltage regulation mitigate electromagnetic leakage. Fault injection alters computations allowing attackers to infer keys from erroneous outputs. Certification standards mandate side-channel evaluations for smartcards. Robust hardware design remains essential. Even proven algorithms fail when implementations leak."
+    },
+    {
+        "id": "39",
+        "title": "Differential and Linear Cryptanalysis",
+        "content": "Differential cryptanalysis studies how input differences propagate through ciphers. Analysts craft plaintext pairs and observe resulting ciphertext differences. Linear cryptanalysis approximates nonlinear components with linear expressions. Both methods count biases to recover subkey bits. Designers construct S-boxes and permutations to resist these attacks. DES design secrets later revealed deliberate resistance tradeoffs. Multiple rounds exponentially decrease exploitable correlations. Modern ciphers undergo extensive academic scrutiny before acceptance. Understanding these techniques teaches defensive design. Advanced analysis pushes continuous improvement."
+    },
+    {
+        "id": "40",
+        "title": "Fault Injection Attacks",
+        "content": "Fault attacks deliberately introduce errors during cryptographic computations. Glitches include voltage drops clock spikes temperature extremes and laser illumination. RSA implementations vulnerable to single faulty signature reveal private primes via CRT math. AES fault analysis may leak key bytes through differential comparisons. Countermeasures detect anomalies and restart computations. Redundant execution and on-chip sensors strengthen resilience. Attack surfaces grow with complex embedded devices. Evaluating fault resistance requires specialized laboratory equipment. Security certifications now include fault testing. Awareness aids secure hardware deployments."
+    },
+    {
+        "id": "41",
+        "title": "Quantum Key Distribution",
+        "content": "Quantum Key Distribution uses quantum mechanics to exchange secrets with eavesdropping detection. Photons encoded in polarization carry key bits across optical fibers. Measuring photons collapses superposition revealing interception attempts. BB84 protocol demonstrates practical implementation fundamentals. Distance limitations arise from signal attenuation and detector noise. Trusted node relays extend range by re-encrypting keys. Satellite links explore global QKD possibilities. Integrating QKD with classical cryptography yields hybrid networks. High equipment costs currently limit adoption. Research may eventually mainstream quantum secure links."
+    },
+    {
+        "id": "42",
+        "title": "Steganography Fundamentals",
+        "content": "Steganography conceals the existence of messages rather than scrambling content. Least significant bit embedding hides data inside digital images. Audio and video carriers offer higher capacity channels. Robustness against compression and reformatting presents challenges. Statistical steganalysis detects hidden patterns using machine learning. Watermarking relates by embedding ownership information resiliently. Combining steganography with cryptography doubles protection. Ethical concerns arise in censorship circumvention and malware communication. Proper key management is still necessary. Practitioners must balance payload size invisibility and robustness."
+    },
+    {
+        "id": "43",
+        "title": "DRM and Content Protection",
+        "content": "Digital Rights Management enforces licensing through cryptographic controls. Encrypted media streams require authorized keys for playback. License servers distribute keys after verifying user entitlements. Hardware secure enclaves store decryption secrets safely. Decryption occurs on-the-fly preventing easy extraction. Watermarking identifies leaks by tagging streams uniquely. Attackers target key storage and capture output after decryption. Balancing user rights and creator control remains contentious. Standards like Widevine PlayReady and FairPlay dominate streaming. DRM demonstrates applied cryptography in media ecosystems."
+    },
+    {
+        "id": "44",
+        "title": "Blockchain Cryptography",
+        "content": "Blockchains chain cryptographic hashes to secure transaction histories. Consensus algorithms agree on block ordering without central authority. Public key signatures authenticate transaction ownership. Merkle trees allow efficient verification of block contents. Proof-of-work adjusts difficulty to deter tampering. Proof-of-stake replaces energy expenditure with economic collateral. Smart contracts embed executable code enforcing agreements. Hash difficulty and key reuse vulnerabilities require vigilant practice. Quantum threats could impact address security. Blockchain illustrates cryptography’s power in decentralized systems."
+    },
+    {
+        "id": "45",
+        "title": "Secure Multi-Party Computation",
+        "content": "Secure Multi-Party Computation lets parties compute joint functions without revealing inputs. Protocols split data into shares processed collaboratively. Homomorphic encryption garbled circuits and secret sharing support implementations. Applications include privacy-preserving analytics and auctions. Performance trade-offs depend on network latency and computation complexity. Semi-honest models assume participants follow protocol but try learning secrets. Malicious models consider active cheating requiring stronger safeguards. Preprocessing phases can accelerate online computation. Composable security frameworks analyze protocol safety. MPC extends cryptography into collaborative trustless settings."
+    },
+    {
+        "id": "46",
+        "title": "Cryptographic Implementation Pitfalls",
+        "content": "Correct algorithms can fail through poor implementation. Reusing IVs in CBC mode exposes plaintext patterns. Weak random number generators produce predictable keys. Mismanaging padding causes oracle attacks revealing plaintext. Truncating hashes too much weakens collision resistance. Side-channel leaks compromise secrets despite strong math. Copy-and-paste code often ignores context and error handling. Disabling certificate validation invites man-in-the-middle interception. Language misconfiguration, like Java’s default ECB mode, surprises developers. Rigorous testing and code review mitigate these pitfalls."
+    },
+    {
+        "id": "47",
+        "title": "Secure Coding with Crypto APIs",
+        "content": "Modern libraries abstract complex cryptography through high-level primitives. Developers should prefer vetted APIs over rolling custom code. Usage examples and documentation guide correct parameter choices. Safe defaults minimize likelihood of insecure configurations. Deprecation warnings signal algorithms nearing end of life. Memory handling must avoid lingering sensitive data. Exception management prevents information leaks in error messages. Unit tests validate encryption decryption round-trips across edge cases. Continuous integration detects regression in library updates. Secure coding practices complete cryptographic defenses."
+    },
+    {
+        "id": "48",
+        "title": "Formal Verification of Protocols",
+        "content": "Formal methods mathematically prove protocol properties. Model checkers explore state spaces searching for violations. Theorem provers allow deductive reasoning about algebraic representations. Tools like ProVerif and Tamarin analyze symbolic models of cryptographic operations. Verified protocols provide high assurance against logical flaws. Implementations must faithfully reflect verified models. Cost and expertise requirements limit widespread adoption. Verified components still need secure randomness and side-channel resistance. Formal proofs complement but never replace testing. Combining methods yields robust assurance."
+    },
+    {
+        "id": "49",
+        "title": "Ethics in Cryptography",
+        "content": "Cryptography empowers privacy but can shield criminal activity. Export regulations historically restricted algorithm strength. Backdoor proposals threaten universal security for surveillance. Researchers balance disclosure timing against responsible vulnerability reporting. Differential privacy measures protect individual data in statistical releases. Designers must consider inclusivity and accessibility of security tools. Nations debate lawful access versus civil liberties. Transparency and open review foster trustworthy standards. Education spreads awareness reducing misuse potential. Ethical reflection guides responsible cryptographic advancement."
+    },
+    {
+        "id": "50",
+        "title": "Future Directions in Cryptography",
+        "content": "Advances in quantum computing motivate rapid algorithm migration. Homomorphic encryption will enable secure cloud computation at scale. Lightweight ciphers target resource-constrained Internet of Things devices. Machine learning integrated with cryptanalysis could discover novel weaknesses. Hardware enclaves merge secure execution with general processing. Decentralized identity aims to replace centralized authentication databases. Post-quantum standards will redefine key sizes and performance expectations. Privacy-enhancing technologies foster data sharing without exposure. Interdisciplinary research bridges cryptography with economics and sociology. The field continues evolving to meet emerging threats."
+    }
+]

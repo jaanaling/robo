@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "title": "Breaking the Ice",
+    "description": "Clear the very first stage without tapping any hint buttons.",
+    "reward": 1
+  },
+  {
+    "id": 2,
+    "title": "Measured Mind",
+    "description": "Across your opening three stages, spend no more than two hints in total.",
+    "reward": 2
+  },
+  {
+    "id": 3,
+    "title": "Hint Collector",
+    "description": "Rack up an overall count of five hints used during play.",
+    "reward": 1
+  },
+  {
+    "id": 4,
+    "title": "Focused Traveler",
+    "description": "Arrive at stage five having burned fewer than four hints altogether.",
+    "reward": 1
+  },
+  {
+    "id": 5,
+    "title": "Diverse Digger",
+    "description": "Activate at least one hint in three separate stages.",
+    "reward": 2
+  },
+  {
+    "id": 6,
+    "title": "Streak of Insight",
+    "description": "Finish any three stages back-to-back without a single hint.",
+    "reward": 1
+  },
+  {
+    "id": 7,
+    "title": "Inquisitive Analyst",
+    "description": "Reach a lifetime total of ten hints consumed.",
+    "reward": 2
+  },
+  {
+    "id": 8,
+    "title": "Lean Hacker",
+    "description": "Beat stage ten while your cumulative hint usage remains below six.",
+    "reward": 3
+  },
+  {
+    "id": 9,
+    "title": "Hint Connoisseur",
+    "description": "Sample every available hint category at least once in any stages.",
+    "reward": 2
+  },
+  {
+    "id": 10,
+    "title": "Lightning Logic",
+    "description": "Solve a stage entirely hint-free within the designated fast-clear window.",
+    "reward": 3
+  },
+  {
+    "id": 11,
+    "title": "Metro Mapper",
+    "description": "Complete fifteen stages while keeping total hints used under ten.",
+    "reward": 4
+  },
+  {
+    "id": 12,
+    "title": "Quantum Balance",
+    "description": "From stages five through ten, employ exactly one hint on each and every stage.",
+    "reward": 4
+  },
+  {
+    "id": 13,
+    "title": "Pure Path",
+    "description": "Conquer five stages with absolutely zero hints.",
+    "reward": 3
+  },
+  {
+    "id": 14,
+    "title": "Guiding Hand",
+    "description": "Accumulate a grand total of twenty hints throughout the adventure.",
+    "reward": 3
+  },
+  {
+    "id": 15,
+    "title": "Master of Restraint",
+    "description": "Finish the whole game having spent no more than ten hints altogether.",
+    "reward": 4
+  }
+]
